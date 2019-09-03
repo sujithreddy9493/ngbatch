@@ -9,7 +9,7 @@ import { EventEmitter } from '@angular/core';
 export class CustomerDetailComponent implements OnInit {
  @Input() customerData;
  @Output() shareData: EventEmitter<number[]> = new EventEmitter();
- content = [0,1,2,3]
+ content = [0,1,2,3,4]
  sendData(){
   
   this.shareData.emit(this.content);
