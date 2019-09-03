@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		function DinningTableMaker(dinningtable){
+			this.dinningtable = dinningtable;
+
+		}
+		function SofaMaker(matType, shape){
+			console.log(this);
+			this.sofamaterialtype = matType;
+			this.shape =shape;
+			//this.soafDetails = function(){
+			//	console.log(this.shape, this.sofamaterialtype);
+			//}
+		}
+		SofaMaker.prototype.soafDetails == function(){
+
+				console.log(this.shape, this.sofamaterilatype);
+
+			}
+		function Furniture(sofa, chairs, dinningtable){
+			//DinningTableMaker.call(this,dinningtable);
+			//SofaMaker.call(this,sofa);
+			SofaMaker.apply(this,sofa);
+			//SofaMaker(sofa);
+			//DinningTableMaker(dinningtable);
+			this.chair =chairs;
+		}
+		var sofaOrder = new SofaMaker(["wodden","L-shape"],"steel chair");
+		var chairOrder = new Furniture(["wooden","L-shape"], "chairs");
+		var chairOrder = new Furniture(["wooden","standard shape"], "metal chairs");
+	</script>
+
+</body>
+</html>

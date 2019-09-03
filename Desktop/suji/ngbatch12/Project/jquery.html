@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	</head>
+<body>
+	<div>
+		<p>This is sujithreddy iam studying mca final year in rao's institutions at nellore</p>
+	</div>
+	<button>Hide/show</button>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		var show;
+		$("button").click(function(){
+			console.log("run test");
+			show = show == true ? false: true;
+		    if(show == true){
+			//$("div").css("display","none");
+			$("div").hide();
+		}else{
+
+			//$("div").css("display","block");
+			$("div").show();
+			}
+		   //$("div").toggleClass();
+		})
+		
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,161 @@
+<div class="container">
+  <div class="jumbotron">
+
+<h3 style="text-align:center">{{title}}</h3>
+
+<form #loginFormGroup = 'ngForm'(ngSubmit)="formDetails(loginFormGroup)" >
+ <div class="form-group">
+      <label for="exampleInputEmail1" style="color:darkblue">Email address</label>
+      <input 
+       type="email"
+       #emailVar ='ngModel'
+       ngModel
+       required
+       email  
+       pattern ="[a-zA-Z0-9\.]+@[a-z0-9\.]+"
+       name="email"
+       style="width: 300px;height: 30px; color: blue" 
+       class="form-control"
+       id="exampleInputEmail1" 
+       [ngClass] ='{"is-invalid" : loginFormGroup.controls.email?.invalid && emailVar.touched}'
+       aria-describedby="emailHelp"
+        placeholder="Enter email">
+       <div class = "invalid-feedback" *ngIf="loginFormGroup.controls.email">
+        <p *ngIf ="emailVar.errors?.required">This is a mandatory feild</p>
+        <p *ngIf ="emailVar.errors?.pattern">Enter vaild email</p>
+        
+       </div>
+      
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1" style="color:darkblue">Password</label>
+      <input
+       type="password"
+       #passwordVar ='ngModel'
+       ngModel
+       required
+       password
+       name="password"
+       style="width: 300px; height: 30px;"
+       class="form-control" 
+       id="exampleInputPassword1" 
+       [ngClass] ='{"is-invalid" : loginFormGroup.controls.password?.invalid && passwordVar.touched }'
+       placeholder="Password">
+     <div class = "invalid-feedback" *ngIf="loginFormGroup.controls.password">
+      <p *ngIf ="passwordVar.errors?.required">This is a mandatory feild</p>
+
+     </div>
+  
+    </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <div >
+        <label for="exampleInputFirstname" style="color:darkblue">First name</label>
+      <input type="text"
+      name="Firstname"
+      #Firstname='ngModel'
+      ngModel
+      pattern="[a-zA-Z ]+"
+      style="width: 250px;height: 40px; color:deeppink"
+      class="form-control"
+      [ngClass] ='{"is-invalid" :  loginFormGroup.controls.Firstname?.invalid && Firstname.touched}'
+       placeholder="First name" required>
+      <div class="invalid-feedback" *ngIf="loginFormGroup.controls.Firstname">
+        <p *ngIf ="Firstname.errors?.required">Firstname</p>
+        <p *ngIf ="Firstname.errors?.pattern">only letters</p>
+
+      </div>
+      </div>
+      <div>
+      <label for="exampleInputLastname" style="color:darkblue">Enter Lastname</label>
+      <input type="text" 
+      #Lastname='ngModel' 
+      pattern="[a-zA-z ]+"
+      ngModel
+      required name="Lastname"
+      style="width: 250px;height: 40px; color:deeppink"
+      class="form-control" 
+      [ngClass] ='{"is-invalid" : loginFormGroup.controls.Lastname?.invalid && Lastname.touched}'
+      placeholder="Last name">
+      <div class="invalid-feedback" *ngIf="loginFormGroup.controls.Lastname"> 
+          <p *ngIf ="Lastname.errors?.required">This is mandatory field</p>
+          <p *ngIf ="Lastname.errors?.pattern">only letters</p>
+       </div>
+      </div>
+      <div>
+          <label for="exampleInputCity" style="color:darkblue">City</label>
+        <input type="text"  
+        #city='ngModel'
+        ngModel
+        required
+        pattern="[a-zA-Z ]+"
+        name="city"
+        style="width: 250px;height: 40px; color:cyan"
+        class ="form-control"
+         [ngClass] ='{"is-invalid" : loginFormGroup.controls.city?.invalid && city.touched}'
+          placeholder="city">
+         <div class="invalid-feedback" >
+            <p *ngIf ="city.errors?.required">This is mandatory field</p>
+            <p *ngIf ="city.errors?.pattern">only letters</p>
+         </div>
+      </div>
+      <div>
+          <label for="exampleInputState" style="color: darkblue">State</label>
+        <input type="text" 
+        ngModel
+        #state='ngModel'
+        pattern="[a-zA-Z ]+"
+        required name="state"
+        style="width: 250px;height: 40px; color:darkorchid"
+        class="form-control"
+        [ngClass] ='{"is-invalid" : loginFormGroup.controls.state?.invalid && state.touched}'
+        placeholder="state">
+         <div class="invalid-feedback">
+            <p *ngIf ="state.errors?.required">This is mandatory field</p>
+            <p *ngIf ="state.errors?.pattern">only letters</p>
+     </div>
+      </div>
+      <div>
+        <label for="exampleInputAddress" style="color:darkblue">Address</label>
+        <input type="text" #address='ngModel'
+        ngModel
+        required
+         name="address"
+        style="width: 250px;height: 40px; color:darkorchid"
+        class="form-control" 
+        [ngClass] ='{"is-invalid" : loginFormGroup.controls.address?.invalid && address.touched}'
+        placeholder="Address">
+        <div class = "invalid-feedback">
+            <p *ngIf ="address.errors?.required">This is mandatory field</p>
+            
+         </div>
+      </div>
+      <div>
+          <label for="exampleInputNumber" style="color:darkblue">phonenumber</label>
+
+        <input type="phonenumber"
+        #phonenumber='ngModel' name="phonenumber"
+        minlength="10"
+        maxlength="10"
+        ngModel
+        required
+        number
+        style="width: 250px;height: 40px; color:darkviolet"
+        [ngClass] ='{"is-invalid" : loginFormGroup.controls.phonenumber?.invalid && phonenumber.touched }'
+        class="form-control"
+         placeholder="phonenumber">
+         <div class = "invalid-feedback">
+            <p *ngIf ="phonenumber.errors?.required">Enter valid details </p>
+            <p *ngIf ="phonenumber.errors?.minlength">Enter valid number</p>
+            <p *ngIf ="phonenumber.errors?.maxlength">Enter valid number</p>
+          </div>
+      </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <input type="reset" value="clear"/>
+  </form>
+    <h6 style="text-align: center">{{S}}</h6>
+  </div>
+</div>

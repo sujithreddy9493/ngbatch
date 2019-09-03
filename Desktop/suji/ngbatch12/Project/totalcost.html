@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div>
+     <h3>Ramesh </h3>
+     <table border>
+
+         <tr >
+         	<td>ProductName</td>
+         	<td>ItemCost</td>
+         </tr>
+          <tr>
+          	<td>rebook shoes</td>
+            <td>5000</td>
+         </tr>
+          <tr>
+            <td>stationary</td>
+            <td>500</td>
+         </tr>
+          <tr>
+          	<td>Total Cost </td>
+            <td>5500</td>
+        </tr>
+     </table>
+  </div>
+
+     <script type="text/javascript" src="data.js"></script>
+     <script type="text/javascript">
+
+      var customer = document.createElement("div");
+      var customerName = document.createElement("h3");
+      var tableContent =  document.createElement("table");
+      var productItem =  document.createElement("tr");
+      var productDetails =  document.createElement("td");
+
+         console.log(typeof(data)); 
+
+         for(var i = 0 ; i < data.length; i = i + 1 ){
+
+          console.log(data[i].firstName);
+         // console.log(data[i].orders);
+         var totalCost = 0;
+        for(var j = 0; j < data[i].orders.length ; j = j + 1){
+
+            console.log(data[i].orders[j].itemCost)
+            totalCost = totalCost + data[i].orders[j].itemCost;
+           if(j == data[i].orders.length -1){
+
+                    console.log(totalCost);	
+
+              }
+           }
+
+             var firstName = document.createElement("h3");
+             firstName.innerText = data[i].firstName;
+             document.body.appendChild(firstName);
+              
+               var ProductName = document.createElement("h2");
+              ProductName.innerText = data[i].ProductName;
+              document.body.appendChild(ProductName);
+                 
+              }
+              console.log(a);
+                 var a = 10 ;
+
+     </script>
+     <script type="text/javascript">
+
+               console.log(a);
+     </script>
+
+
+</body>
+</html>  

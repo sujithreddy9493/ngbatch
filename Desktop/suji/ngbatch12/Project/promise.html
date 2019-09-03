@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		function build(resolve,reject){
+			var xhr = new XMLHttpRequest()
+			console.log(xhr.readyState);
+			xhr.open("GET","https://jsonplaceholder.typicode.com/posts",true);
+			console.log(xhr.readyState);
+			xhr.onreadyStatechange = function(){
+			if(xhr.readyState ==4 && xhr.status == 200){
+				console.log(xhr.readyState);
+				console.log(xhr.response);
+				resolve(xhr.response);
+				console.log(xhr.readyState);
+
+			}else if(xhr.readyState ==4){
+				reject(xhr.status);
+			}
+		}
+		  xhr.send(null);
+		}
+
+		function getData(){
+			return new Promise(build)
+		}
+		 var promise = getData();
+
+		  function Test(Param){
+		  		function resolve(data){
+                   return data
+		  	}
+		  	function reject(data){
+		  		return data
+		  	}
+		  	  this.then = function(){
+
+		  	  }
+		  }
+		  new Test(function(resolve,reject){
+		  	resolve(10);
+		  })
+	</script>
+	<div>
+		<p>
+			hide this line
+		</p>
+	</div>
+	<button>hide/show</button>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		var show;
+		$("button").click(function(){
+			console.log("run test");
+			show = show == true ? false: true;
+		    if(show == true){
+			//$("div").css("display","none");
+			$("div").hide();
+		}else{
+
+			//$("div").css("display","block");
+			$("div").show();
+			}
+
+		})
+	</script>
+
+</body>
+</html>

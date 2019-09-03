@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<title></title>
+
+</head>
+
+<body>
+
+	<div>
+
+		<h3>Ramesh </h3>
+
+		<table border>
+
+
+
+			<tr >
+
+				<td>ProductName</td>
+
+				<td>ItemCost</td>
+
+			</tr>
+
+			<tr>
+
+				<td>rebook shoes</td>
+
+				<td>5000</td>
+
+			</tr>
+
+			<tr>
+
+				<td>stationary</td>
+
+				<td>500</td>
+
+			</tr>
+
+			<tr>
+
+				<td>Total Cost </td>
+
+				<td>5500</td>
+
+			</tr>
+
+		</table>
+
+	</div>
+
+	<script type="text/javascript" src="data.js"></script>
+
+	<script type="text/javascript">
+
+		var table = {
+
+			color: "dark",
+
+			make: "wooden"
+
+		}
+
+
+
+		for(var key in table){
+
+			console.log(table[key])
+
+		}
+
+
+
+
+
+		console.log(typeof(data));
+
+		for(var i = 0 ; i < data.length; i = i + 1 ){
+
+
+
+			var customer = document.createElement("div");
+
+			var customerName = document.createElement("h3");
+
+			var tableContent =  document.createElement("table");
+
+			console.log(data[i].firstName);
+
+			// console.log(data[i].orders);
+
+			var totalCost = 0;
+
+			// orders array for loop
+].			for(var j = 0; j < data[i].orders.length ; j = j + 1){
+
+				var productItem =  document.createElement("tr");
+
+				var eachOrderObject = data[i].orders[j];
+
+				// iterating through key value pair of product object of orders array
+
+				for(var key in eachOrderObject){
+
+					var tableColumn = document.createElement("td");
+
+					tableColumn.innerText = eachOrderObject[key];
+
+					productItem.appendChild(tableColumn);
+  
+					
+ 
+				}
+
+				tableContent.appendChild(productItem);
+
+				customer.appendChild(tableContent);
+
+				console.log(data[i].orders[j].itemCost)
+
+				totalCost = totalCost + data[i].orders[j].itemCost;
+
+				if(j == data[i].orders.length -1){
+
+					var totalCostRow = document.createElement("tr");
+
+					var totalCostColumn = document.createElement("td");
+
+					var priceColumn = document.createElement("td");
+
+					totalCostColumn.innerText = "TotalCost";
+
+					priceColumn.innerText = totalCost;
+
+					totalCostRow.appendChild(totalCostColumn);
+
+					totalCostRow.appendChild(priceColumn);
+
+					customer.appendChild(totalCostRow);
+
+					console.log(totalCost);	
+
+				}
+
+				document.body.appendChild(customer);
+
+			}
+
+			var firstName = document.createElement("h3");
+
+			firstName.innerText = data[i].firstName;
+
+			document.body.appendChild(firstName);
+
+		}
+
+		console.log(a);
+
+		var a = 10 ;
+
+	</script>
+
+	<script type="text/javascript">
+
+		console.log(a);
+
+
+
+	</script>
+
+</body>
+
+</html>

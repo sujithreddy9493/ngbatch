@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		function multiply(a,b){
+
+			console.log(a + b);
+
+		}
+
+		var multipleOf3 = multiply.bind(this,3);
+
+		var obj = {
+
+			testFn : function(){
+
+				console.log(this);
+
+			}
+
+		}
+
+	</script>
+
+</body>
+
+</html>

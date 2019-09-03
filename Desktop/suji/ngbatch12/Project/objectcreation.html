@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<title></title>
+
+</head>
+
+<body>
+
+<script type="text/javascript">
+
+	var  a = 10;
+
+	var b = a; 
+
+	b = 20 ;
+
+	console.log(a);
+
+
+
+	var person1 = {
+
+		name: "sujisree"
+
+	}
+
+	var person2 = person1;
+
+	var person3 = Object.create(person1);
+
+	console.log(person1.name)
+
+	person3.name = "suji";
+
+	person2.name = "sree";
+
+	console.log(person1.name);
+
+
+
+	function Furniture(sofaShape, dinningSet){
+
+		this.sofaShape = sofaShape;
+
+		this.dinningSet = dinningSet
+
+	}
+	var order1 = new Furniture("l-shaped","6 seater");
+
+
+
+	var xhr = new XMLHttpRequest()
+
+	console.log(xhr.readyState);
+
+	xhr.open("GET","https://jsonplaceholder.typicode.com/posts",true)
+
+	console.log(xhr.readyState);
+
+	xhr.onreadystatechange = function(){
+
+		if(xhr.readyState == 4 && xhr.status == 200){
+
+			console.log(xhr.readyState);
+
+			//console.log(xhr.response);
+
+			console.log(xhr.readyState);	
+
+		}else{
+
+			console.log(xhr.status);
+
+		}
+
+		
+
+	}
+
+
+
+	xhr.send(null);
+
+
+	</script>
+
+</body>
+</html>

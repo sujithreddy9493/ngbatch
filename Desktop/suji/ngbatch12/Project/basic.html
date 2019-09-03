@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<title></title>
+
+</head>
+
+<body>
+
+	<div>
+
+		<h3>heading</h3>
+
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+	</div>
+
+	<form>
+
+		<input type="text" name="username" placeholder="username">
+
+		<input type="password" name="pwd" placeholder="password">
+
+		<button id="sendData"> submit</button>
+
+	</form>
+
+	<button> hide </button>
+
+	<script type="text/javascript">
+
+		var divEl = document.getElementsByTagName("div")[0];
+
+		var btnEl = document.getElementsByTagName("button")[1];
+
+		var userName = document.getElementsByName('username')[0];
+
+		var password = document.getElementsByName('pwd')[0];
+
+		var submitBtn = document.getElementById("sendData");
+
+		console.log(userName.value);
+
+		console.log(divEl.innerText);
+
+		console.log(divEl.innerHTML);
+
+		submitBtn.onclick= function(e){
+
+			e.preventDefault();
+
+			var userInfo = {
+
+				username : userName.value,
+
+				password : password.value
+
+			}
+
+			console.log(JSON.stringify(userInfo));
+
+		}
+
+
+
+		function Furniture(){
+
+			console.log(this);
+
+		}
+
+		window.Furniture();
+
+		var testObj = {
+
+			name : "krishna",
+
+			run: function(){
+
+				console.log(this);
+
+			}
+
+		}
+
+		testObj.run();
+
+
+
+
+
+		btnEl.onclick = function(e){
+
+			//console.log(e);
+
+			//e.preventDefault();
+
+			if(this.innerText === "hide"){
+
+				divEl.style.display = "none";	
+
+			}else{
+
+				divEl.style.display = "block";	
+
+			}
+
+			this.innerText = this.innerText === "hide" ? "show" : "hide";
+
+		}
+
+	</script>
+
+</body>
+
+</html>

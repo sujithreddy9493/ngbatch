@@ -1,0 +1,105 @@
+<div class="container">
+<div class="jumbotron">
+<form  [formGroup]='rootFormGroup'>
+    <div class="form-group">
+      <label for="name"> Name</label>
+      <input type="text"
+       class="form-control"
+       id="name"
+       formControlName = 'name'
+       [ngClass] ='{"is-invalid": rootFormGroup.controls.name?.invalid}'
+       aria-describedby="emailHelp" 
+        placeholder="Name">
+    <div class="invalid-feedback">
+      <p *ngIf="rootFormGroup.controls.errors?.required">Enter Name</p>
+    </div>
+    </div>
+    <div class="form-group">
+        <label for="rating">Rating</label>
+        <input type="number" 
+        class="form-control"
+        required
+        id="rating" 
+        formControlName ='rating' 
+        [ngClass] = '{"is-invalid": rootFormGroup.controls.rating?.invalid}'  
+        placeholder="rating">
+        <div class="invalid-feedback" >
+            <p *ngIf = "rootFormGroup.get('rating').errors?.check">
+                Enter a value between 1 to 10
+            </p>
+        </div>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" (click)="notificationProcess()"
+        type="radio" 
+        name="notifymethod" 
+        formControlName="notifymethod" id="exampleRadios1" value="phone" checked>
+        <label class="form-check-label" for="exampleRadios1">
+          phone notification
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" (click)="notificationProcess()"
+         type="radio" 
+        name="notifymethod"  
+        formControlName="notifymethod" id="exampleRadios2" value="email">
+        <label class="form-check-label" for="exampleRadios2" checked>
+          email notification
+        </label>
+      </div>
+      
+
+      <div class="form-group">
+        <label for="phone">phone</label>
+        <input type="phone" class="form-control"  required
+        formControlName ='phone' 
+        [ngClass]='{"is-invalid": rootFormGroup.controls.phone?.invalid}'
+        id="phone" placeholder="phone">
+        <div class="invalid-feedback">
+        <p *ngIf="rootFormGroup.get('phone').errors?.check">enter phone number</p>
+      </div>
+    </div>
+    <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email"
+             class="form-control" 
+             formControlName ='email'
+             required
+             pattern="[a-zA-Z0-9\.]+@[a-z0-9\.]+"
+             id="exampleInputEmail1" aria-describedby="emailHelp"
+             [ngClass]='{"is-invalid": rootFormGroup.controls.email?.invalid}'
+            placeholder="Enter email">
+            <div class="invalid-feeback">
+              <p *ngIf="rootFormGroup.controls.errors?.required">This is mandatory</p>
+              <p *ngIf="rootFormGroup.controls.errors?.pattern">Enter vaild email address</p>
+            </div>  
+          </div>
+          <div formGroupName = 'address'>
+            <div class="form-group">
+              <label for="city">City</label>
+              <input type="text" 
+                class="form-control" 
+                id="city" 
+                formControlName = 'city'
+                [ngClass] = '{"is-invalid": rootFormGroup.get("address.city").invalid}'
+                placeholder="city">
+            </div>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" 
+                class="form-control" 
+                id="state" 
+                formControlName = 'state'
+                [ngClass] = '{"is-invalid": rootFormGroup.get("address.state").invalid}'
+                aria-describedby="emailHelp" 
+                placeholder="State">
+            </div>
+          </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  </div>
+  </div>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<title>	</title>
+
+</head>
+
+<body>
+
+	<script type="text/javascript">
+
+		function DiningArea(){
+
+
+
+		}
+
+		function SofaMaker(matType, shape){
+
+			console.log(this);
+
+			this.sofamaterilatype = matType;
+
+			this.shape = shape;
+
+			// this.sofaDetails = function(){
+
+			// 	console.log(this.shape, this.sofamaterilatype);
+
+			// }
+
+		}
+
+		
+
+
+
+		function Furniture(sofa, chairs, diningarea, kitchen){
+
+			// SofaMaker.call(this,sofa);
+
+			SofaMaker.apply(this,sofa);
+
+			//SofaMaker(sofa);
+
+			this.chairs = chairs;
+
+		}
+
+		Furniture.prototype = Object.create(SofaMaker.prototype);
+
+		SofaMaker.prototype.sofaDetails = function(){
+
+				console.log(this.shape, this.sofamaterilatype);
+
+		}
+
+		Furniture.prototype.constructor = Furniture;
+
+		// Furniture.prototype.sofaDetails = "N/A";
+
+		var sofaOrder = new SofaMaker(["wooden","l-shape"],"steelchair");
+
+		var chairOrder = new Furniture(["wooden","l-shape"]," wooden chairs ");
+
+		var chairOrder1 = new Furniture(["wooden","standard shape"]," metal chairs ");
+
+      </script>
+  </body>
+  
