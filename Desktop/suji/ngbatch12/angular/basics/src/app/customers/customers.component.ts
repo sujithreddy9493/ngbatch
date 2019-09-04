@@ -21,12 +21,24 @@ export class CustomersComponent implements OnInit {
       }
   ]
 
-  constructor() { }
-
+  constructor() { 
+    console.log('customers component constructor')
+   }
+  ngOnChanges(){
+    console.log("ng onchanges in customers commponent")
+  }
   ngOnInit() {
   }
   sharedDataFromChild(data){
     console.log('data', data);
+    this.data.push(data[0]);
+    console.log('pushed data', this.data);
+    //this.data = data;
   }
-
+  sendData(){
+    this.data = [{name:"radha"}]
+  }
+  ngDoCheck(){
+    console.log("updated this.data", this.data)
+  }
 }

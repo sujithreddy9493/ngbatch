@@ -1,2 +1,6 @@
-<p>customer-detail works!</p>
+<p>customer-detail works!{{num}}</p>
+<p *ngFor = "let data of customerData">
+    {{data.name}}
+</p>
+<input type="text" [value] = 'num'>
 <button (click)='sendData()'>send data</button>
