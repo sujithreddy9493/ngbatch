@@ -39,6 +39,6 @@ export class CustomersComponent implements OnInit {
     this.data = [{name:"radha"}]
   }
   ngDoCheck(){
-    console.log("updated this.data", this.data)
+    //console.log("updated this.data", this.data)
   }
 }
