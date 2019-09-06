@@ -12,11 +12,28 @@ export class AppComponent implements OnInit {
   arr = ['red','blue','green'];
 
  @ViewChild('user',{static: false}) userElement:ElementRef;
-
+  constructor(){
+    console.log('constructor appcomponent ')
+  }
   ngOnInit(){
 
+    console.log('ngOnInit appcomponent')
 
-
+  }
+  ngDoCheck(){
+    console.log('ngDoCheck appcomponent');
+  }
+  ngAfterContentInit(){
+    console.log('ngaftercontentinit appcomponent');
+  }
+  ngAfterContentChecked(){
+    console.log("ngaftercontentchecked appcomponent ");
+  }
+  ngAfterViewInit(){
+    console.log('ngafterviewinit appcomponent');
+  }
+  ngAfterViewChecked(){
+    console.log("ngafterviewchecked appcomponent ");
   }
 
   color = 'grey';

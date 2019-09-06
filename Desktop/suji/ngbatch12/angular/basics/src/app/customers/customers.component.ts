@@ -11,7 +11,7 @@ export class CustomersComponent implements OnInit {
         name:"suji"
       },
       {
-        name:"sree"
+        name:"Apple"
       },
       {
         name:"nani"
@@ -28,7 +28,22 @@ export class CustomersComponent implements OnInit {
     console.log("ng onchanges in customers commponent")
   }
   ngOnInit() {
+    console.log('ngoninit CustomersComponent')
   }
+  
+  ngAfterContentInit(){
+    console.log('ngaftercontentinit customers component');
+  }
+  ngAfterContentChecked(){
+    console.log("ngaftercontentchecked customers component ");
+  }
+  ngAfterViewInit(){
+    console.log('ngafterviewinit customers component');
+  }
+  ngAfterViewChecked(){
+    console.log("ngafterviewchecked customers component ");
+  }
+
   sharedDataFromChild(data){
     console.log('data', data);
     this.data.push(data[0]);
@@ -39,6 +54,6 @@ export class CustomersComponent implements OnInit {
     this.data = [{name:"radha"}]
   }
   ngDoCheck(){
-    //console.log("updated this.data", this.data)
+    console.log("ngDoCheck CustomersComponent");
   }
 }

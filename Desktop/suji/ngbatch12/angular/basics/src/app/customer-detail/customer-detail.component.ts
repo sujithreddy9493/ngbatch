@@ -14,6 +14,7 @@ num =10;
  @Output() shareData: EventEmitter<{ name: string}[]> = new EventEmitter();
  content = [{name: 'Balaram'}];
  ngOnChanges(obj){
+   console.log('customer-detail component ngonchanges')
   console.log(obj);
  }
  sendData(){
@@ -27,23 +28,25 @@ num =10;
 
   ngOnInit() {
     
-    console.log('ngOninit',this.customerData);
+    console.log('ngOninit CustomerDetailComponent');
     console.log('this.wrapper ngOninit',this.wrapper, this.content1);
   }
   ngDoCheck(prev, cur){
+    console.log('ngDoCheck CustomerDetailComponent');
     this.customerData.push({name:'krishna'})
     console.log('this.customerData ngdocheck', this.customerData , prev , cur);
   }
   ngAfterContentInit(){
-    console.log('this.wrapper ngaftercontentinit',this.wrapper, this.content1);
+    console.log('ngaftercontentinit customer-detail');
+    //console.log('this.wrapper ngaftercontentinit',this.wrapper, this.content1);
   }
   ngAfterContentChecked(){
-    console.log("this.ngAfterContentchecked ")
+    console.log("ngAfterContentchecked customer-detail")
   }
   ngAfterViewInit(){
-    console.log('this.wrapper ngafterviewinit',this.wrapper, this.content1);
+    console.log(' ngafterviewinit customer-details',this.wrapper, this.content1);
   }
   ngAfterViewChecked(){
-    console.log("this.ngAfterviewchecked ")
+    console.log("ngafterviewchecked customer-details ")
   }
 }

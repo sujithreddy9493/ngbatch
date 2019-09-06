@@ -3,5 +3,5 @@
     {{data.name}}
 </p>
 <input type="text" [value] = 'num'>
-<div #wrapper></div>
+<div #wrapper><ng-content></ng-content></div>
 <button (click)='sendData()'>send data</button>

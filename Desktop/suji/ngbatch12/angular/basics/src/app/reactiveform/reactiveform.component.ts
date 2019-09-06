@@ -19,7 +19,7 @@ return function (control:AbstractControl):null |{[Key:string]:boolean}{
   styleUrls: ['./reactiveform.component.css']
 })
 export class ReactiveformComponent implements OnInit {
-
+  num =10;
   constructor() { }
   rootFormGroup;
 
