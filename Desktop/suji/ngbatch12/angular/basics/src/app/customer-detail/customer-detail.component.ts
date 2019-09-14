@@ -12,7 +12,7 @@ num =10;
  @ContentChild('content',{static:false}) content1:ElementRef;
  @Input() customerData;
  @Output() shareData: EventEmitter<{ name: string}[]> = new EventEmitter();
- content = [{name: 'Balaram'}];
+ content = [{name: 'Balaram' }];
  ngOnChanges(obj){
    console.log('customer-detail component ngonchanges')
   console.log(obj);
@@ -33,7 +33,7 @@ num =10;
   }
   ngDoCheck(prev, cur){
     console.log('ngDoCheck CustomerDetailComponent');
-    this.customerData.push({name:'krishna'})
+    //this.customerData.push({name:'krishna'})
     console.log('this.customerData ngdocheck', this.customerData , prev , cur);
   }
   ngAfterContentInit(){
