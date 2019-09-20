@@ -1,0 +1,13 @@
+.icon-user:before {
+  content: "\1f464";
+}
+.icon-windows8:before {
+  content: "\1f3fc";
+}
+  .icon-list2:before {
+    content: "\2630";
+  }
+  .icon-plus:before {
+    content: "\271a";
+  }
+  

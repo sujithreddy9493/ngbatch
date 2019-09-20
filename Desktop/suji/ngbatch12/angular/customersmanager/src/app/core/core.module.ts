@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
+import { DataService } from './services/data.service';
 
 
 
@@ -9,6 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
   imports: [
     CommonModule
   ],
-  exports:[NavbarComponent]
+  exports:[NavbarComponent],
+  providers:[DataService]
 })
 export class CoreModule { }

@@ -1,1 +1,15 @@
-<p>customerscardview works!</p>
+<div class="row">
+<div class="col-sm-4" *ngFor ="let data of CustomersData">
+<div class="card">
+   <div class="card-header" [routerLink]='[data.id,"detail"]'>
+    {{data.firstName | titlecase}} {{data.lastName |titlecase}}
+   </div>
+    <div class="card-body">
+      
+      <p class="card-text">{{data.city}}</p>
+      <p class="card-text">{{data.state.name}}</p>
+      <a href="#" class="btn btn-primary">View Orders</a>
+    </div>
+  </div>
+</div>
+</div>

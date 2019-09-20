@@ -1,0 +1,9 @@
+.icon-list-numbered:before {
+    content: "\2263";
+  }
+  .icon-price-tags:before {
+    content: "\27a4";
+  }
+  .icon-pencil:before {
+    content: "\270e";
+  }

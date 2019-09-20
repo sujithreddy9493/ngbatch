@@ -1,1 +1,20 @@
-<p>customerslistview works!</p>
+
+<table class="table table-striped">
+  <tr>
+    <th >FirstName </th>
+    <th >LastName</th>
+    <th>City</th>
+    <th >State</th>
+    <th>View Orders</th>
+  </tr>
+<tbody>
+  <tr *ngFor = "let data of customersData" [routerLink] = '[data.id,"detail"]'>
+    <th scope="row">{{data.firstName | titlecase}}</th>
+    <td>{{data.lastName | titlecase}}</td>
+    <td>{{data.city | titlecase}}</td>
+    <td>{{data.state.name}}</td>
+    <td><a href="#" class="btn btn-primary">View Orders</a></td>
+  </tr>
+</tbody>
+</table>
+

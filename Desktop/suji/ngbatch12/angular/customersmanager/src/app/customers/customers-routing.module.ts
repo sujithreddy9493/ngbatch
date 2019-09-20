@@ -6,14 +6,14 @@ import { CustomerslistviewComponent } from './customerslistview.component';
 
 
 const routes: Routes = [
-  {path:'',
-  component:CustomersComponent,
-   children:[
-     {path:'card',component:CustomerscardviewComponent},
-     {path:'list',component:CustomerslistviewComponent},
+  {
+    path:'',
+    component:CustomersComponent,
+    children:[
+      {path:'cardview',component: CustomerscardviewComponent},
+      {path:'listview',component: CustomerslistviewComponent}
 
    ] 
-   
    }
 ];
 

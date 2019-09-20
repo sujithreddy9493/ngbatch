@@ -1,10 +1,12 @@
 <div class="container">
     <div col-sm-12>
-        <a class="navbar-brand" href="#">Customer</a>
+        <a class="navbar-brand" href="#"> <span class="icon-user"></span>Customer</a>
 
     </div>
 </div>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-dark bg-primary">
+
+<nav class="navbar navbar-expand-lg ">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -12,20 +14,22 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Cardview <span class="sr-only">(current)</span></a>
+          <a class="nav-link" routerLink='cardview'> <span class="icon-windows8"></span>Cardview <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">ListView</a>
+          <a class="nav-link"  routerLink='listview' > <span class="icon-list2"></span>ListView</a>
         </li>
         
         <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1">New customer</a>
+          <a class="nav-link disabled" href="#" tabindex="-1"> <span class="icon-plus"></span>New customer</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Filter</button>
+        <input class="form-control mr-sm-2" type="search" placeholder="Filter" aria-label="Search">
       </form>
     </div>
   </nav>
+ </nav> 
+    
 <router-outlet></router-outlet>
