@@ -1,1 +1,14 @@
-<p>customer-detail works!</p>
+
+<div class="col-sm-4" *ngIf = 'CustomerDetailedInfo'>
+    <div class="card" >
+      <div class="card-header">
+        {{CustomerDetailedInfo.firstName | titlecase  }} {{CustomerDetailedInfo.lastName | titlecase }}
+      </div>
+      <div class="card-body">
+        <p class="card-text">{{CustomerDetailedInfo.address}}</p>
+        <p class="card-text">{{CustomerDetailedInfo.city}}</p>
+        <p class="card-text">{{CustomerDetailedInfo.state.name}}</p>
+       
+      </div>
+    </div>
+  </div>

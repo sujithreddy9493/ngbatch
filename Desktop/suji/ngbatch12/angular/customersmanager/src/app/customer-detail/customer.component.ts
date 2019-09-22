@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ActivatedRoute } from '@angular/router';
+import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-customer',
   templateUrl: './customer.component.html',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomerComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route:ActivatedRoute) {
+    console.log('route',route);
+  }
 
   ngOnInit() {
+    const id: Observable<string> = this.route.params.pipe(map(p => p.id)).subscribe((data) => {
+      console.log(data);
+    });
   }
 
 }

@@ -1,37 +1,37 @@
 <div class="container">
         <div class="jumbotron">
-<form #loginFormGroup = "ngForm"(ngUpdate)="formDetails(loginFormGroup.value)">
+<form #loginFormGroup = "ngForm"(ngSubmit)="formDetails(loginFormGroup.value)">
     <div class="form-group">
         <label for="firstName">FirstName</label>
         <input type="text"
-            name="Firstname"
-            #Firstname='ngModel'
+            name="firstName"
+            #firstName='ngModel'
             ngModel
             pattern="[a-zA-Z ]+"
             style="width: 350px;height: 40px; color:deeppink"
             class="form-control"
-            [ngClass] ='{"is-invalid" :  loginFormGroup.controls.Firstname?.invalid && Firstname.touched}'
+            [ngClass] ='{"is-invalid" :  loginFormGroup.controls.firstName?.invalid && firstName.touched}'
             placeholder="First name" required>
-      <div class="invalid-feedback" *ngIf="loginFormGroup.controls.Firstname">
-        <p *ngIf ="Firstname.errors?.required">Firstname</p>
-        <p *ngIf ="Firstname.errors?.pattern">only letters</p>
+      <div class="invalid-feedback" *ngIf="loginFormGroup.controls.firstName">
+        <p *ngIf ="firstName.errors?.required">Firstname</p>
+        <p *ngIf ="firstName.errors?.pattern">only letters</p>
 
       </div>
       </div>
       <div class="form-group">
         <label for="lastName">LastName</label>
         <input type="text"  
-         name="LastName"
-         #LastName='ngModel'
+         name="lastName"
+         #lastName='ngModel'
          ngModel
          pattern="[a-zA-Z ]+"
          style="width: 350px;height: 40px; color:deeppink"
          class="form-control"
-         [ngClass] ='{"is-invalid" :  loginFormGroup.controls.LastName?.invalid && LastName.touched}' 
+         [ngClass] ='{"is-invalid" :  loginFormGroup.controls.lastName?.invalid && lastName.touched}' 
          id="LastName"  placeholder="LastName" required>
-         <div class="invalid-feedback" *ngIf="loginFormGroup.controls.LastName">
-                <p *ngIf ="LastName.errors?.required">Firstname</p>
-                <p *ngIf ="LastName.errors?.pattern">only letters</p>
+         <div class="invalid-feedback" *ngIf="loginFormGroup.controls.lastName">
+                <p *ngIf ="lastName.errors?.required">Firstname</p>
+                <p *ngIf ="lastName.errors?.pattern">only letters</p>
          
          </div>
       </div>
