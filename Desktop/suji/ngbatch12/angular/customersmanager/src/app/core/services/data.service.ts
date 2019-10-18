@@ -12,10 +12,8 @@ export class DataService{
     url = '/api/customers';
 
     getCustomersData():Observable<ICustomer[]>{
-
         return this.http.get<ICustomer[]>(this.url).pipe(
-
-            map(data => data)
+        map(data => data)
 
         )
 
@@ -25,6 +23,15 @@ export class DataService{
         return this.http.get<ICustomer>(this.url+'/'+id).pipe(
             map(data => data)
         )
+    }
+    updateCustomer(customer):Observable<Boolean>{
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+        headers.append('Accept', 'application/json');
+        return this.http.put<Boolean>(this.url+'/'+customer.id,customer);
+    }
+    deleteCustomer(id):Observable<boolean>{
+        return this.http.delete<boolean>(this.url + '/' + id);
     }
 }
 

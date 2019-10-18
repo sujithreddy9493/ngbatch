@@ -1,15 +1,17 @@
 <div class="row">
-<div class="col-sm-4" *ngFor ="let data of CustomersData">
+<div class="col-sm-4" *ngFor ="let data of customersData">
 <div class="card">
    <div class="card-header" [routerLink]='[data.id,"detail"]'>
     {{data.firstName | titlecase}} {{data.lastName |titlecase}}
    </div>
-    <div class="card-body">
+   <div class="pull-left card-body-left">
+    <img src="assets/{{data.gender | lowercase}}.png" class="card-image" width="100" height="100">
+</div>
       
-      <p class="card-text">{{data.city}}</p>
-      <p class="card-text">{{data.state.name}}</p>
-      <a href="#" class="btn btn-primary">View Orders</a>
+<div class="pull-right card-body-right">
+  <div class="card-body-content">{{data.city | titlecase }}, {{data.state.name | titlecase}}</div>
+  <a [routerLink]="[data.id,'orders']">View Orders</a>
+</div>
     </div>
   </div>
-</div>
 </div>

@@ -1,14 +1,16 @@
 
 <table class="table table-striped">
-  <tr>
-    <th >FirstName </th>
-    <th >LastName</th>
-    <th>City</th>
-    <th >State</th>
-    <th>View Orders</th>
-  </tr>
+  <thead>
+    <tr>
+      <th appSortby = "firstName" (sorted) = "sort($event)" >First Name </th>
+      <th appSortby = "lastName" (sorted) = "sort($event)" >Last Name</th>
+      <th appSortby = "address" (sorted) = "sort($event)" >Address</th>
+      <th appSortby = "city" (sorted) = "sort($event)" >City</th>
+    </tr>
+  </thead>
 <tbody>
   <tr *ngFor = "let data of customersData" [routerLink] = '[data.id,"detail"]'>
+    <td><img src="assets/{{ data.gender | lowercase }}.png" class="grid-image" width="150" height="150" alt="Customer Image"></td>
     <th scope="row">{{data.firstName | titlecase}}</th>
     <td>{{data.lastName | titlecase}}</td>
     <td>{{data.city | titlecase}}</td>

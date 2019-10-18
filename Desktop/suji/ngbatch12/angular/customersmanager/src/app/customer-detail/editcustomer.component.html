@@ -1,14 +1,14 @@
 <div class="container">
         <div class="jumbotron">
-<form #loginFormGroup = "ngForm"(ngSubmit)="formDetails(loginFormGroup.value)">
+<form #loginFormGroup = "ngForm"(ngSubmit)="formDetails(loginFormGroup.value)" *ngIf="CustomerInfo">
     <div class="form-group">
         <label for="firstName">FirstName</label>
         <input type="text"
             name="firstName"
             #firstName='ngModel'
-            ngModel
+            [ngModel]='CustomerInfo.firstName'
             pattern="[a-zA-Z ]+"
-            style="width: 350px;height: 40px; color:deeppink"
+            style="width: 350px;height: 40px;color:darkorchid"
             class="form-control"
             [ngClass] ='{"is-invalid" :  loginFormGroup.controls.firstName?.invalid && firstName.touched}'
             placeholder="First name" required>
@@ -23,9 +23,9 @@
         <input type="text"  
          name="lastName"
          #lastName='ngModel'
-         ngModel
+         [ngModel]='CustomerInfo.lastName'
          pattern="[a-zA-Z ]+"
-         style="width: 350px;height: 40px; color:deeppink"
+         style="width: 350px;height: 40px;color:darkorchid"
          class="form-control"
          [ngClass] ='{"is-invalid" :  loginFormGroup.controls.lastName?.invalid && lastName.touched}' 
          id="LastName"  placeholder="LastName" required>
@@ -38,9 +38,9 @@
       <div class="form-group">
             <label for="exampleInputAddress" style="color:darkblue">Address</label>
             <input type="text" #address='ngModel'
-            ngModel
             required
-             name="address"
+            name="address"
+            [ngModel]='CustomerInfo.address'
             style="width: 350px;height: 40px; color:darkorchid"
             class="form-control" 
             [ngClass] ='{"is-invalid" : loginFormGroup.controls.address?.invalid && address.touched}'
@@ -54,11 +54,11 @@
                 <label for="exampleInputCity" style="color:darkblue">City</label>
               <input type="text"  
               #city='ngModel'
-              ngModel
+              [ngModel]='CustomerInfo.city'
               required
               pattern="[a-zA-Z ]+"
               name="city"
-              style="width: 350px;height: 40px; color:cyan"
+              style="width: 350px;height: 40px; color:darkorchid"
               class ="form-control"
                [ngClass] ='{"is-invalid" : loginFormGroup.controls.city?.invalid && city.touched}'
                 placeholder="city">
@@ -70,8 +70,8 @@
             <div class="form-group">
                 <label for="exampleInputState" style="color: darkblue">State</label>
               <input type="text" 
-              ngModel
               #state='ngModel'
+              [ngModel]='CustomerInfo.state.name'
               pattern="[a-zA-Z ]+"
               required name="state"
               style="width: 350px;height: 40px; color:darkorchid"
@@ -84,9 +84,9 @@
            </div>
             </div>
 
-    <button type="submit" class="btn btn-primary">Delete</button>
-    <button type="submit" class="btn btn-primary">Cancel</button>
-    <button type="submit" class="btn btn-primary">Update</button>
+   <button type="submit" class="btn btn-danger" (click)='delete()'>Delete</button>
+    <button type="submit" class="btn btn-primary" (click) = 'leavePage()'>Cancel</button>
+    <button type="button" class="btn btn-success" (click)='submit()'>Update</button>
   </form>
   </div>
   </div>

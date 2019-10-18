@@ -14,7 +14,7 @@ export class CustomerComponent implements OnInit {
   }
 
   ngOnInit() {
-    const id: Observable<string> = this.route.params.pipe(map(p => p.id)).subscribe((data) => {
+    this.route.params.pipe(map(p => p.id)).subscribe((data) => {
       console.log(data);
     });
   }

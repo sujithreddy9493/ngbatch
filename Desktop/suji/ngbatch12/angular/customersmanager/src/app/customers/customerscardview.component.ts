@@ -8,11 +8,11 @@ import { DataService } from '../core/services/data.service';
 export class CustomerscardviewComponent implements OnInit {
 
   constructor(private dataService: DataService) { }
-  CustomersData;
+  customersData;
   ngOnInit() {
-    this.dataService.getCustomersData().subscribe((data)=>{
-        this.CustomersData = data;
-    })
+    this.dataService.getCustomersData().subscribe((data) => {
+      this.customersData = data;
+    });
   }
 
 }
