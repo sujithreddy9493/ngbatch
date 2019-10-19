@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
+  {path:'orders',loadChildren:"./orders/orders.module#OrdersModule"},
   {path:'login', loadChildren:"./login/login.module#LoginModule"},
   {path:'customers', loadChildren:"./customers/customers.module#CustomersModule"},
   {path:'customers/cardview/:id', loadChildren:"./customer-detail/customer-detail.module#CustomerDetailModule"},
